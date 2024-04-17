@@ -14,8 +14,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-builder.Services.AddSingleton<List<Window>>(); 
-builder.Services.AddScoped<IWindowLogic, WindowLogic>(); 
+
 
 var app = builder.Build();
 

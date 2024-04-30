@@ -1,5 +1,5 @@
 using Domain.Model;
-
+    
 namespace Database;
 
 public class DataAccess

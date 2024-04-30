@@ -1,41 +1,32 @@
-namespace Domain.Model;
-using System.ComponentModel.DataAnnotations;
-
-
-public class GreenHouse
+namespace Domain.Model
 {
-    [Key]
-    public int GreenHouseId { get; set; }
-    public string GreenHouseName { get; set; }
-    public string? Description { get; set; }
-    public double Temperature { get; set; }
-    public double LightIntensity { get; set; }
-    public double Co2Levels { get; set; }
-    public double Humidity { get; set; }
-    public Window Window { get; }
+    using System.ComponentModel.DataAnnotations;
 
-
-    public GreenHouse(int greenHouseId, string greenHouseName, double temperature, double lightIntensity, double co2Levels, double humidity, Window window)
+    public class GreenHouse
     {
-        GreenHouseId = greenHouseId;
-        GreenHouseName = greenHouseName;
-        Temperature = temperature;
-        LightIntensity = lightIntensity;
-        Co2Levels = co2Levels;
-        Humidity = humidity;
-        Window = window;
-    }
+        [Key]
+        public int GreenHouseId { get; set; }
+        public string GreenHouseName { get; set; }
+        public string? Description { get; set; }
+        public double Temperature { get; set; }
+        public double LightIntensity { get; set; }
+        public double Co2Levels { get; set; }
+        public double Humidity { get; set; }
+        public Window Window { get; set; } // Make it settable
 
-    //Contains Description
-    public GreenHouse(int greenHouseId, string greenHouseName, string? description, double temperature, double lightIntensity, double co2Levels, double humidity, Window window)
-    {
-        GreenHouseId = greenHouseId;
-        GreenHouseName = greenHouseName;
-        Description = description;
-        Temperature = temperature;
-        LightIntensity = lightIntensity;
-        Co2Levels = co2Levels;
-        Humidity = humidity;
-        Window = window;
+        // Parameterless constructor
+        public GreenHouse() { }
+
+        // Constructor with all properties including Window
+        public GreenHouse(int greenHouseId, string greenHouseName, double temperature, double lightIntensity, double co2Levels, double humidity, Window window)
+        {
+            GreenHouseId = greenHouseId;
+            GreenHouseName = greenHouseName;
+            Temperature = temperature;
+            LightIntensity = lightIntensity;
+            Co2Levels = co2Levels;
+            Humidity = humidity;
+            Window = window;
+        }
     }
 }
